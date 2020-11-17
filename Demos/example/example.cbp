@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PALDemoIrrlicht" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Linux">
+				<Option platforms="Unix;" />
+				<Option output="./IrrPal" prefix_auto="0" extension_auto="0" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_IRR_STATIC_LIB_" />
+				</Compiler>
+				<Linker>
+					<Add library="Xxf86vm" />
+					<Add library="GL" />
+					<Add library="X11" />
+					<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/lib/Linux" />
+				</Linker>
+			</Target>
+			<Target title="Windows">
+				<Option platforms="Windows;" />
+				<Option output="./IrrPal" prefix_auto="0" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add directory="../../lib/Win32-gcc" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="Windows;Linux;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-g" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/include" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal/" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal/pal" />
+		</Compiler>
+		<Linker>
+			<Add library="Irrlicht" />
+			<Add library="pal" />
+			<Add library="pal_ode" />
+			<Add directory="./" />
+			<Add directory="../../../IrrPAL" />
+			<Add directory="../../PhysEngines" />
+			<Add directory="../../PhysEngines/ode/ode-0.13" />
+		</Linker>
+		<Unit filename="begin.cpp" />
+		<Unit filename="example.cpp" />
+		<Unit filename="graphics.cpp" />
+		<Unit filename="graphics.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
