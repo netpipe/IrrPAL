@@ -3,4 +3,4 @@ make CXXFLAGS+=-fPIC
 
 
 
-ode and libpal need to be built using the makefiles , the codeblocks projects seem to be a nogo sofar.
+ode need to be built using the makefiles , the rest using Codeblocks
