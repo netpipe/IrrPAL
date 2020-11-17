@@ -52,6 +52,22 @@
 		<Unit filename="Config.h" />
 		<Unit filename="ConfigStatic.h" />
 		<Unit filename="ConfigVersion.h" />
+		<Unit filename="framework/common.h" />
+		<Unit filename="framework/empty.h" />
+		<Unit filename="framework/errorlog.cpp" />
+		<Unit filename="framework/errorlog.h" />
+		<Unit filename="framework/factory.h" />
+		<Unit filename="framework/factoryconfig.cpp" />
+		<Unit filename="framework/factoryconfig.h" />
+		<Unit filename="framework/managedmemoryobject.h" />
+		<Unit filename="framework/os.cpp" />
+		<Unit filename="framework/os.h" />
+		<Unit filename="framework/osfs.cpp" />
+		<Unit filename="framework/osfs.h" />
+		<Unit filename="framework/statuscode.h" />
+		<Unit filename="framework/statusobject.cpp" />
+		<Unit filename="framework/statusobject.h" />
+		<Unit filename="framework/util.h" />
 		<Unit filename="pal.cpp" />
 		<Unit filename="pal.h" />
 		<Unit filename="pal.inl" />
@@ -97,6 +113,7 @@
 		<Unit filename="palTerrain.cpp" />
 		<Unit filename="palTerrain.h" />
 		<Unit filename="palVehicle.h" />
+		<Unit filename="pal_i/hull.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

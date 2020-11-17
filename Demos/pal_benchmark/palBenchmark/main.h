@@ -24,7 +24,7 @@
 //#define QUICK
 //#define SHORT_VIDEO_VERSION
 
-#include "../../example/graphics.h"
+#include "../example/graphics.h"
 #include "dialog.h"
 #include "pal/palVehicle.h"
 #include <irrlicht.h>
