@@ -59,9 +59,9 @@
 	notes:
 */
 
-#include "../pal/pal.h"
-#include "../pal/palFactory.h"
-#include "../pal/palCollision.h"
+#include "pal/pal.h"
+#include "pal/palFactory.h"
+#include "pal/palCollision.h"
 
 #include <Newton.h>
 #if defined(_MSC_VER)

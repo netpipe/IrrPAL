@@ -19,11 +19,7 @@ mode and if he presses 'D' we toggle to material between solid and detail mapped
 
 using namespace irr;
 
-using namespace core;
-using namespace scene;
-using namespace video;
-using namespace io;
-using namespace gui;
+#pragma comment(lib, "Irrlicht.lib")
 
 
 class MyEventReceiver : public IEventReceiver
@@ -36,7 +32,7 @@ public:
 		Terrain = terrain;
 	}
 
-	bool OnEvent(const SEvent& event)
+	bool OnEvent(const SEvent &event)
 	{
 		// check if user presses the key 'W' or 'D'
 		if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
@@ -87,63 +83,6 @@ public:
 };
 
 
-//global declarations
-scene::ISceneManager* g_smgr = 0;
-scene::ITerrainSceneNode* g_terrain = 0;
-
-void LoadTerrain(float x, float y, float z, float sx, float sy, float sz) {
-	//call the irrlicht add terrain scene node
-		g_terrain = g_smgr->addTerrainSceneNode(
-		"../../media/terrain-heightmap.bmp",
-		0,										// parent node
-		-1,										// node id
-		core::vector3df(x, y, z),			// position
-		core::vector3df(0.f, 0.f, 0.f),			// rotation
-		core::vector3df(sx, sy, sz),		// scale
-		video::SColor ( 255, 255, 255, 255 ),	// vertexColor,
-		5,										// maxLOD
-		scene::ETPS_17,							// patchSize
-		4										// smoothFactor
-		);
-
-	//get the vertex buffer
-	//scene::SMeshBufferLightMap smb;
-	//g_terrain->getMeshBufferForLOD(smb,0);
-	scene::CDynamicMeshBuffer smb(video::EVT_2TCOORDS,video::EIT_32BIT);
-
-    g_terrain->getMeshBufferForLOD(
-      smb,      0 //level of detail
-      );
-
-
-	//get the number of vertices and indicies from Irrlicht
-	int nv = smb.getVertexCount ();
-	int ni = smb.getIndexCount 	();
-
-	//create the physics terrain mesh, and some space to store our data
-	palTerrainMesh *ptm = PF->CreateTerrainMesh();
-	float *pVerts = new float[3*nv];
-	int *pInds = new int[ni];
-
-	//get a pointer to the verticies and indicies from Irrlicht
-	irr::video::S3DVertex2TCoords* pv = (irr::video::S3DVertex2TCoords*) smb.getVertices();
-	irr::u16* pi = (irr::u16*)smb.getIndices();
-	//copy the vertex and index data
-	int i;
-	for (i=0;i<nv;i++) {
-		pVerts[i*3+0]=sx*pv[i].Pos.X + x; //scale each vertex by sX and set its position with x
-		pVerts[i*3+1]=sy*pv[i].Pos.Y + y;
-		pVerts[i*3+2]=sz*pv[i].Pos.Z + z;
-	}
-	for (i=0;i<ni;i++) {
-		pInds[i]=pi[i];
-	}
-	//initialize the physics terrain
-	ptm->Init(0,0,0,pVerts,nv,pInds,ni);
-	delete [] pVerts ;
-	delete [] pInds ;
-}
-
 /*
 The start of the main function starts like in most other example. We ask the user
 for the desired renderer and start it up.
@@ -154,64 +93,47 @@ int main()
 	//load physics
 	PF->LoadPALfromDLL();
 
-	//let user select physics driver.
-	printf("Please select the physics driver you want for this example:\n"\
-		" (a) Bullet\n (b) JigLib\n (c) Newton\n"\
-		" (d) ODE\n (e) Simple Physics Engine\n"\
-		" (f) Tokamak\n (g) TrueAxis\n (otherKey) exit\n\n");
+	//let user select physics driver, we will just set it to use bullet.
+	PF->SelectEngine("ODE");
 
-	char i;
-	std::cin >> i;
-	switch(i)
-	{
-		case 'a': PF->SelectEngine("Bullet");break;
-		case 'b': PF->SelectEngine("Jiggle");break;
-		case 'c': PF->SelectEngine("Newton");break;
-		case 'd': PF->SelectEngine("ODE");break;
-		case 'e': PF->SelectEngine("SPE");break;
-		case 'f': PF->SelectEngine("Tokamak");break;
-		case 'g': PF->SelectEngine("TrueAxis");break;
-		default: return 1;
-	}
-
-	// PF->SelectEngine("ODE");
 	//set up physics
 	palPhysics *pp = PF->CreatePhysics();
 	if (!pp) {
 		printf("Error : Could not load physics engine! Is \"libpal_<physicsengine>.dll\" missing?\n");
 		return 0;
 	}
-
 	if (pp){
 		palPhysicsDesc desc;
 		pp->Init(desc);
-//		pp->Init(-9.8);
+//		pp->Init(0,-9.8,0);
 	}
+
 	// let user select driver type
 
 	video::E_DRIVER_TYPE driverType = video::EDT_OPENGL;
 
-//	printf("Please select the driver you want for this example:\n"\
-//		" (a) Direct3D 9.0c\n (b) Direct3D 8.1\n (c) OpenGL 1.5\n"\
-//		" (d) Software Renderer\n (e) Burning's Software Renderer\n"\
-//		" (f) NullDevice\n (otherKey) exit\n\n");
-//
-//	std::cin >> i;
+	printf("Please select the driver you want for this example:\n"\
+		" (a) Direct3D 9.0c\n (b) Direct3D 8.1\n (c) OpenGL 1.5\n"\
+		" (d) Software Renderer\n (e) Burning's Software Renderer\n"\
+		" (f) NullDevice\n (otherKey) exit\n\n");
 
-//	switch(i)
-//	{
-//		case 'a': driverType = video::EDT_DIRECT3D9;break;
-////		case 'b': driverType = video::EDT_DIRECT3D8;break;
-//		case 'c': driverType = video::EDT_OPENGL;   break;
-//		case 'd': driverType = video::EDT_SOFTWARE; break;
-//		case 'e': driverType = video::EDT_BURNINGSVIDEO;break;
-//		case 'f': driverType = video::EDT_NULL;     break;
-//		default: return 1;
-//	}
+	char i;
+	std::cin >> i;
+
+	switch(i)
+	{
+		case 'a': driverType = video::EDT_DIRECT3D9;break;
+		case 'b': driverType = video::EDT_DIRECT3D8;break;
+		case 'c': driverType = video::EDT_OPENGL;   break;
+		case 'd': driverType = video::EDT_SOFTWARE; break;
+		case 'e': driverType = video::EDT_BURNINGSVIDEO;break;
+		case 'f': driverType = video::EDT_NULL;     break;
+		default: return 1;
+	}
 
 	// create device
 
-	IrrlichtDevice* device = createDevice(video::EDT_OPENGL, core::dimension2d<u32>(640, 480));
+	IrrlichtDevice* device = createDevice(driverType, core::dimension2d<u32>(640, 480));
 
 	if (device == 0)
 		return 1; // could not create selected driver.
@@ -224,7 +146,7 @@ int main()
 	*/
 
 	video::IVideoDriver* driver = device->getVideoDriver();
-	g_smgr = device->getSceneManager();
+	scene::ISceneManager* smgr = device->getSceneManager();
 	gui::IGUIEnvironment* env = device->getGUIEnvironment();
 
 	driver->setTextureCreationFlag(video::ETCF_ALWAYS_32_BIT, true);
@@ -243,11 +165,11 @@ int main()
 
 	// add camera
 	scene::ICameraSceneNode* camera =
-		g_smgr->addCameraSceneNodeFPS(0,100.0f,0.50f);
+		smgr->addCameraSceneNodeFPS(0,100.0f,1200.f);
 
-	camera->setPosition(core::vector3df(0,15,10));
-	camera->setTarget(core::vector3df(10,15,10));
-	camera->setFarValue(120.0f);
+	camera->setPosition(core::vector3df(1900*2,255*2,3700*2));
+	camera->setTarget(core::vector3df(2397*2,343*2,2700*2));
+	camera->setFarValue(12000.0f);
 
 	// disable mouse cursor
 	device->getCursorControl()->setVisible(false);
@@ -267,21 +189,51 @@ int main()
 	*/
 
 	// add terrain scene node
-	LoadTerrain(-100,0,-100,
-				0.8,0.04,0.8);
+	scene::ITerrainSceneNode* terrain = smgr->addTerrainSceneNode(
+		"../../media/terrain-heightmap.bmp",
+		0,										// parent node
+		-1,										// node id
+		core::vector3df(0.f, 0.f, 0.f),			// position
+		core::vector3df(0.f, 0.f, 0.f),			// rotation
+		core::vector3df(40.f, 4.4f, 40.f),		// scale
+		video::SColor ( 255, 255, 255, 255 ),	// vertexColor,
+		5,										// maxLOD
+		scene::ETPS_17,							// patchSize
+		4										// smoothFactor
+		);
 
+	terrain->setMaterialFlag(video::EMF_LIGHTING, false);
 
-	g_terrain->setMaterialFlag(video::EMF_LIGHTING, false);
+	terrain->setMaterialTexture(0, driver->getTexture("../../media/terrain-texture.jpg"));
+	terrain->setMaterialTexture(1, driver->getTexture("../../media/detailmap3.jpg"));
 
-	g_terrain->setMaterialTexture(0, driver->getTexture("../../media/terrain-texture.jpg"));
-	g_terrain->setMaterialTexture(1, driver->getTexture("../../media/detailmap3.jpg"));
+	terrain->setMaterialType(video::EMT_DETAIL_MAP);
 
-	g_terrain->setMaterialType(video::EMT_DETAIL_MAP);
-
-	g_terrain->scaleTexture(1.0f, 20.0f);
+	terrain->scaleTexture(1.0f, 20.0f);
 	//terrain->setDebugDataVisible ( true );
 
+	/*
+	To be able to do collision with the terrain, we create a triangle selector.
+	If you want to know what triangle selectors do, just take a look into the
+	collision tutorial. The terrain triangle selector works together with the
+	terrain. To demonstrate this, we create a collision response animator
+	and attach it to the camera, so that the camera will not be able to fly
+	through the terrain.
+	*/
 
+	// create triangle selector for the terrain
+	scene::ITriangleSelector* selector
+		= smgr->createTerrainTriangleSelector(terrain, 0);
+	terrain->setTriangleSelector(selector);
+	selector->drop();
+
+	// create collision response animator and attach it to the camera
+	scene::ISceneNodeAnimator* anim = smgr->createCollisionResponseAnimator(
+		selector, camera, core::vector3df(60,100,60),
+		core::vector3df(0,0,0),
+		core::vector3df(0,50,0));
+	camera->addAnimator(anim);
+	anim->drop();
 
 	/*
 	To make the user be able to switch between normal and wireframe mode, we create
@@ -290,13 +242,13 @@ int main()
 	*/
 
 	// create event receiver
-	MyEventReceiver receiver(g_terrain);
+	MyEventReceiver receiver(terrain);
 	device->setEventReceiver(&receiver);
 
    	// create skybox
 	driver->setTextureCreationFlag(video::ETCF_CREATE_MIP_MAPS, false);
 
-	g_smgr->addSkyBoxSceneNode(
+	smgr->addSkyBoxSceneNode(
 		driver->getTexture("../../media/irrlicht2_up.jpg"),
 		driver->getTexture("../../media/irrlicht2_dn.jpg"),
 		driver->getTexture("../../media/irrlicht2_lf.jpg"),
@@ -310,14 +262,14 @@ int main()
 	//our vector of all physics objects
 	std::vector<BindObject *> vbo;
 
-	///lets make 7 cubes
-//	for (int i=1;i<2;i++) {
+	//lets make 7 cubes
+//	for (int i=1;i<7;i++) {
 //		BindObject *pbo = 0;
-//		float size = 2.0f;
+//		float size = 300.0f;
 //		//create a new bind object
 //		pbo = new BindObject;
 //		//lets set the bind object node to a cube scene node
-//		pbo->node =  g_smgr->addCubeSceneNode(size,0,-1,core::vector3df(0,0,0),core::vector3df(0,0,0),core::vector3df(1,1,1));
+//		pbo->node =  smgr->addCubeSceneNode(size,0,-1,core::vector3df(0,0,0),core::vector3df(0,0,0),core::vector3df(1,1,1));
 //		//lets create a physics box as well
 //		palBox *pb = PF->CreateBox();
 //		//set the physics position, and a matching size
@@ -349,10 +301,10 @@ int main()
 			vbo[i]->Update();
 		}
 
-	//	driver->beginScene(ECBF_COLOR | ECBF_DEPTH, SColor(255,100,101,140));
+
 		driver->beginScene(true, true, 0 );
 
-		g_smgr->drawAll();
+		smgr->drawAll();
 		env->drawAll();
 
 		driver->endScene();
@@ -368,7 +320,7 @@ int main()
 			// Also print terrain height of current camera position
 			// We can use camera position because terrain is located at coordinate origin
 			str += " Height: ";
-			str += g_terrain->getHeight(camera->getAbsolutePosition().X, camera->getAbsolutePosition().Z);
+			str += terrain->getHeight(camera->getAbsolutePosition().X, camera->getAbsolutePosition().Z);
 
 			device->setWindowCaption(str.c_str());
 			lastFPS = fps;
