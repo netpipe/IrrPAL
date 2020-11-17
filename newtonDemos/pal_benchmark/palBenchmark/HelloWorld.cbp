@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Irrlicht Example 01 Hello World" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Linux">
+				<Option platforms="Unix;" />
+				<Option output="../../bin/Linux/HelloWorld" prefix_auto="0" extension_auto="0" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_IRR_STATIC_LIB_" />
+				</Compiler>
+				<Linker>
+					<Add library="Xxf86vm" />
+					<Add library="GL" />
+					<Add library="X11" />
+					<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/lib/Linux" />
+				</Linker>
+			</Target>
+			<Target title="Windows">
+				<Option platforms="Windows;" />
+				<Option output="../../bin/Win32-gcc/HelloWorld" prefix_auto="0" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add directory="../../lib/Win32-gcc" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="Windows;Linux;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-g" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/include" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal/" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal/pal/" />
+		</Compiler>
+		<Linker>
+			<Add library="Irrlicht" />
+			<Add library="pal" />
+			<Add directory="./" />
+		</Linker>
+		<Unit filename="bridge_scene.h" />
+		<Unit filename="collision_scene.h" />
+		<Unit filename="dialog.h" />
+		<Unit filename="drop_scene.h" />
+		<Unit filename="graph.h" />
+		<Unit filename="irrlicht_globals.cpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Unit filename="paltest.h" />
+		<Unit filename="resource.h" />
+		<Unit filename="restitution_scene.h" />
+		<Unit filename="stack_ball_scene.h" />
+		<Unit filename="stack_scene.h" />
+		<Unit filename="standard_scenes.h" />
+		<Unit filename="strings.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

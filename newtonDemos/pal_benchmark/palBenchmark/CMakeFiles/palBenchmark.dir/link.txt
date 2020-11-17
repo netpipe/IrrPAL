@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/palBenchmark.dir/main.cpp.o  -o ../../bin/palBenchmark  ../../lib/libpal.so -llibtest -lm -ldl -lGL -lGLU -lpthread 

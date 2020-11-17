@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="libpal.cbp" />
+		<Project filename="newtonDemos/PALIrrlicht/HelloWorld.cbp" />
+		<Project filename="PhysEngines/pal_ode.cbp" />
+		<Project filename="PhysEngines/ode/ode-0.13/ODE.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

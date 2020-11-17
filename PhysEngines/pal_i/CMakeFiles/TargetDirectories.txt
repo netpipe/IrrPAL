@@ -1,0 +1,2 @@
+/home/netpipe/Desktop/IrrNew/pal-code/pal/pal_i/CMakeFiles/rebuild_cache.dir
+/home/netpipe/Desktop/IrrNew/pal-code/pal/pal_i/CMakeFiles/edit_cache.dir

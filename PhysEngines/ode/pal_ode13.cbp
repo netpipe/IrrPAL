@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="pal_ode" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="./pal_ode" prefix_auto="1" extension_auto="1" />
+				<Option object_output="./objs" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option host_application="marbles2.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="ode" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="./pal_ode" prefix_auto="1" extension_auto="1" />
+				<Option object_output="./objs" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="ode" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fPIC" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/physics/ode-0.13/include" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/include" />
+			<Add directory="../../../pal" />
+			<Add directory="../../../pal/pal" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add option="-fPIC" />
+		</ResourceCompiler>
+		<Linker>
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/physics/ode-0.13/ode/src/.libs" />
+		</Linker>
+		<Unit filename="ode_pal.cpp" />
+		<Unit filename="ode_pal.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

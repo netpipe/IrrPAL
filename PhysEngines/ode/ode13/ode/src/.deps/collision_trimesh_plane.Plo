@@ -1,0 +1,478 @@
+collision_trimesh_plane.lo: collision_trimesh_plane.cpp \
+ /usr/include/stdc-predef.h ../../include/ode/collision.h \
+ ../../include/ode/common.h ../../include/ode/odeconfig.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include/stddef.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/limits.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+ /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+ /usr/include/bits/xopen_lim.h /usr/include/bits/uio_lim.h \
+ /usr/include/stdio.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/bits/types/__mbstate_t.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/c++/7/stdlib.h /usr/include/c++/7/cstdlib \
+ /usr/include/c++/7/x86_64-suse-linux/bits/c++config.h \
+ /usr/include/c++/7/x86_64-suse-linux/bits/os_defines.h \
+ /usr/include/c++/7/x86_64-suse-linux/bits/cpu_defines.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/bits/floatn.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/timer_t.h /usr/include/bits/stdint-intn.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
+ /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
+ /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/7/bits/std_abs.h \
+ /usr/include/c++/7/math.h /usr/include/c++/7/cmath \
+ /usr/include/c++/7/bits/cpp_type_traits.h \
+ /usr/include/c++/7/ext/type_traits.h /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/huge_val.h /usr/include/bits/huge_val_flt128.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/iscanonical.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include/float.h \
+ ../../include/ode/precision.h ../../include/ode/error.h \
+ ../../include/ode/collision_space.h ../../include/ode/contact.h \
+ ../../include/ode/collision_trimesh.h ../../include/ode/rotation.h \
+ ../../include/ode/compatibility.h config.h /usr/include/malloc.h \
+ /usr/lib64/gcc/x86_64-suse-linux/7/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-uintn.h /usr/include/inttypes.h typedefs.h \
+ matrix.h ../../include/ode/matrix.h odemath.h \
+ ../../include/ode/odemath.h ../../include/ode/odemath_legacy.h error.h \
+ collision_util.h collision_kernel.h objects.h ../../include/ode/memory.h \
+ ../../include/ode/mass.h array.h threading_base.h \
+ ../../include/ode/threading.h /usr/include/time.h \
+ /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h odetls.h odeou.h \
+ ../../ou/include/ou/assert.h ../../ou/include/ou/customization.h \
+ ../../ou/include/ou/namespace.h ../../ou/include/ou/inttypes.h \
+ ../../ou/include/ou/platform.h /usr/include/assert.h \
+ ../../ou/include/ou/enumarrays.h ../../ou/include/ou/macros.h \
+ ../../ou/include/ou/templates.h ../../ou/include/ou/typewrapper.h \
+ ../../ou/include/ou/simpleflags.h ../../ou/include/ou/flagsdefines.h \
+ ../../ou/include/ou/atomic.h ../../ou/include/ou/atomicflags.h \
+ collision_std.h collision_trimesh_internal.h \
+ collision_trimesh_colliders.h ../../include/ode/collision_trimesh.h \
+ ../../OPCODE/Opcode.h ../../OPCODE/OPC_Settings.h \
+ ../../OPCODE/OPC_IceHook.h ../../OPCODE/Ice/IcePreprocessor.h \
+ ../../OPCODE/Ice/IceTypes.h ../../OPCODE/Ice/IceFPU.h \
+ ../../OPCODE/Ice/IceMemoryMacros.h ../../OPCODE/Ice/IceUtils.h \
+ ../../OPCODE/Ice/IceContainer.h ../../OPCODE/Ice/IcePairs.h \
+ ../../OPCODE/Ice/IceRevisitedRadix.h ../../OPCODE/Ice/IceRandom.h \
+ ../../OPCODE/Ice/IceAxes.h ../../OPCODE/Ice/IcePoint.h \
+ ../../OPCODE/Ice/IceHPoint.h ../../OPCODE/Ice/IceMatrix3x3.h \
+ ../../OPCODE/Ice/IceMatrix4x4.h ../../OPCODE/Ice/IcePlane.h \
+ ../../OPCODE/Ice/IceRay.h ../../OPCODE/Ice/IceIndexedTriangle.h \
+ ../../OPCODE/Ice/IceTriangle.h ../../OPCODE/Ice/IceTriList.h \
+ ../../OPCODE/Ice/IceAABB.h ../../OPCODE/Ice/IceOBB.h \
+ ../../OPCODE/Ice/IceBoundingSphere.h ../../OPCODE/Ice/IceSegment.h \
+ ../../OPCODE/Ice/IceLSS.h ../../OPCODE/OPC_Common.h \
+ ../../OPCODE/OPC_MeshInterface.h ../../OPCODE/OPC_TreeBuilders.h \
+ ../../OPCODE/OPC_AABBTree.h ../../OPCODE/OPC_OptimizedTree.h \
+ ../../OPCODE/OPC_BaseModel.h ../../OPCODE/OPC_Model.h \
+ ../../OPCODE/OPC_HybridModel.h ../../OPCODE/OPC_Collider.h \
+ ../../OPCODE/OPC_VolumeCollider.h ../../OPCODE/OPC_TreeCollider.h \
+ ../../OPCODE/OPC_RayCollider.h ../../OPCODE/OPC_SphereCollider.h \
+ ../../OPCODE/OPC_OBBCollider.h ../../OPCODE/OPC_AABBCollider.h \
+ ../../OPCODE/OPC_LSSCollider.h ../../OPCODE/OPC_PlanesCollider.h \
+ ../../OPCODE/OPC_Picking.h
+
+/usr/include/stdc-predef.h:
+
+../../include/ode/collision.h:
+
+../../include/ode/common.h:
+
+../../include/ode/odeconfig.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include/stddef.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/limits.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/uio_lim.h:
+
+/usr/include/stdio.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/bits/types/__mbstate_t.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/c++/7/stdlib.h:
+
+/usr/include/c++/7/cstdlib:
+
+/usr/include/c++/7/x86_64-suse-linux/bits/c++config.h:
+
+/usr/include/c++/7/x86_64-suse-linux/bits/os_defines.h:
+
+/usr/include/c++/7/x86_64-suse-linux/bits/cpu_defines.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/bits/floatn.h:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/types/__locale_t.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/byteswap-16.h:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/c++/7/bits/std_abs.h:
+
+/usr/include/c++/7/math.h:
+
+/usr/include/c++/7/cmath:
+
+/usr/include/c++/7/bits/cpp_type_traits.h:
+
+/usr/include/c++/7/ext/type_traits.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_val_flt128.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/flt-eval-method.h:
+
+/usr/include/bits/fp-logb.h:
+
+/usr/include/bits/fp-fast.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/iscanonical.h:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include/float.h:
+
+../../include/ode/precision.h:
+
+../../include/ode/error.h:
+
+../../include/ode/collision_space.h:
+
+../../include/ode/contact.h:
+
+../../include/ode/collision_trimesh.h:
+
+../../include/ode/rotation.h:
+
+../../include/ode/compatibility.h:
+
+config.h:
+
+/usr/include/malloc.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/7/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/inttypes.h:
+
+typedefs.h:
+
+matrix.h:
+
+../../include/ode/matrix.h:
+
+odemath.h:
+
+../../include/ode/odemath.h:
+
+../../include/ode/odemath_legacy.h:
+
+error.h:
+
+collision_util.h:
+
+collision_kernel.h:
+
+objects.h:
+
+../../include/ode/memory.h:
+
+../../include/ode/mass.h:
+
+array.h:
+
+threading_base.h:
+
+../../include/ode/threading.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/bits/timex.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+odetls.h:
+
+odeou.h:
+
+../../ou/include/ou/assert.h:
+
+../../ou/include/ou/customization.h:
+
+../../ou/include/ou/namespace.h:
+
+../../ou/include/ou/inttypes.h:
+
+../../ou/include/ou/platform.h:
+
+/usr/include/assert.h:
+
+../../ou/include/ou/enumarrays.h:
+
+../../ou/include/ou/macros.h:
+
+../../ou/include/ou/templates.h:
+
+../../ou/include/ou/typewrapper.h:
+
+../../ou/include/ou/simpleflags.h:
+
+../../ou/include/ou/flagsdefines.h:
+
+../../ou/include/ou/atomic.h:
+
+../../ou/include/ou/atomicflags.h:
+
+collision_std.h:
+
+collision_trimesh_internal.h:
+
+collision_trimesh_colliders.h:
+
+../../include/ode/collision_trimesh.h:
+
+../../OPCODE/Opcode.h:
+
+../../OPCODE/OPC_Settings.h:
+
+../../OPCODE/OPC_IceHook.h:
+
+../../OPCODE/Ice/IcePreprocessor.h:
+
+../../OPCODE/Ice/IceTypes.h:
+
+../../OPCODE/Ice/IceFPU.h:
+
+../../OPCODE/Ice/IceMemoryMacros.h:
+
+../../OPCODE/Ice/IceUtils.h:
+
+../../OPCODE/Ice/IceContainer.h:
+
+../../OPCODE/Ice/IcePairs.h:
+
+../../OPCODE/Ice/IceRevisitedRadix.h:
+
+../../OPCODE/Ice/IceRandom.h:
+
+../../OPCODE/Ice/IceAxes.h:
+
+../../OPCODE/Ice/IcePoint.h:
+
+../../OPCODE/Ice/IceHPoint.h:
+
+../../OPCODE/Ice/IceMatrix3x3.h:
+
+../../OPCODE/Ice/IceMatrix4x4.h:
+
+../../OPCODE/Ice/IcePlane.h:
+
+../../OPCODE/Ice/IceRay.h:
+
+../../OPCODE/Ice/IceIndexedTriangle.h:
+
+../../OPCODE/Ice/IceTriangle.h:
+
+../../OPCODE/Ice/IceTriList.h:
+
+../../OPCODE/Ice/IceAABB.h:
+
+../../OPCODE/Ice/IceOBB.h:
+
+../../OPCODE/Ice/IceBoundingSphere.h:
+
+../../OPCODE/Ice/IceSegment.h:
+
+../../OPCODE/Ice/IceLSS.h:
+
+../../OPCODE/OPC_Common.h:
+
+../../OPCODE/OPC_MeshInterface.h:
+
+../../OPCODE/OPC_TreeBuilders.h:
+
+../../OPCODE/OPC_AABBTree.h:
+
+../../OPCODE/OPC_OptimizedTree.h:
+
+../../OPCODE/OPC_BaseModel.h:
+
+../../OPCODE/OPC_Model.h:
+
+../../OPCODE/OPC_HybridModel.h:
+
+../../OPCODE/OPC_Collider.h:
+
+../../OPCODE/OPC_VolumeCollider.h:
+
+../../OPCODE/OPC_TreeCollider.h:
+
+../../OPCODE/OPC_RayCollider.h:
+
+../../OPCODE/OPC_SphereCollider.h:
+
+../../OPCODE/OPC_OBBCollider.h:
+
+../../OPCODE/OPC_AABBCollider.h:
+
+../../OPCODE/OPC_LSSCollider.h:
+
+../../OPCODE/OPC_PlanesCollider.h:
+
+../../OPCODE/OPC_Picking.h:

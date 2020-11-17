@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="sqlite3" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="ode" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="./objs" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="-DLIBOGG_EXPORTS" />
+					<Add directory="include" />
+					<Add directory="dAnimation" />
+					<Add directory="dContainers" />
+					<Add directory="dCustomJoints" />
+					<Add directory="dMath" />
+					<Add directory="tinyxml" />
+					<Add directory="./" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="include" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release">
+				<Option output="ode" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="./objs" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="-DLIBOGG_EXPORTS" />
+					<Add directory="include" />
+					<Add directory="dAnimation" />
+					<Add directory="dContainers" />
+					<Add directory="dCustomJoints" />
+					<Add directory="dMath" />
+					<Add directory="tinyxml" />
+					<Add directory="./" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="include" />
+				</ResourceCompiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fPIC" />
+			<Add directory="../../include" />
+			<Add directory="../../libccd/src" />
+			<Add directory="../../ou/include" />
+		</Compiler>
+		<Unit filename="array.cpp" />
+		<Unit filename="array.h" />
+		<Unit filename="box.cpp" />
+		<Unit filename="capsule.cpp" />
+		<Unit filename="collision_cylinder_box.cpp" />
+		<Unit filename="collision_cylinder_plane.cpp" />
+		<Unit filename="collision_cylinder_sphere.cpp" />
+		<Unit filename="collision_cylinder_trimesh.cpp" />
+		<Unit filename="collision_kernel.cpp" />
+		<Unit filename="collision_libccd.cpp" />
+		<Unit filename="collision_libccd.h" />
+		<Unit filename="collision_quadtreespace.cpp" />
+		<Unit filename="collision_sapspace.cpp" />
+		<Unit filename="collision_space.cpp" />
+		<Unit filename="collision_space_internal.h" />
+		<Unit filename="collision_std.h" />
+		<Unit filename="collision_transform.cpp" />
+		<Unit filename="collision_transform.h" />
+		<Unit filename="collision_trimesh_box.cpp" />
+		<Unit filename="collision_trimesh_ccylinder.cpp" />
+		<Unit filename="collision_trimesh_colliders.h" />
+		<Unit filename="collision_trimesh_disabled.cpp" />
+		<Unit filename="collision_trimesh_distance.cpp" />
+		<Unit filename="collision_trimesh_gimpact.cpp" />
+		<Unit filename="collision_trimesh_internal.h" />
+		<Unit filename="collision_trimesh_opcode.cpp" />
+		<Unit filename="collision_trimesh_plane.cpp" />
+		<Unit filename="collision_trimesh_ray.cpp" />
+		<Unit filename="collision_trimesh_sphere.cpp" />
+		<Unit filename="collision_trimesh_trimesh.cpp" />
+		<Unit filename="collision_trimesh_trimesh_new.cpp" />
+		<Unit filename="collision_util.cpp" />
+		<Unit filename="collision_util.h" />
+		<Unit filename="config.h" />
+		<Unit filename="convex.cpp" />
+		<Unit filename="cylinder.cpp" />
+		<Unit filename="error.cpp" />
+		<Unit filename="error.h" />
+		<Unit filename="export-dif.cpp" />
+		<Unit filename="fastdot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fastldlt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fastlsolve.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fastltsolve.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="heightfield.cpp" />
+		<Unit filename="heightfield.h" />
+		<Unit filename="lcp.cpp" />
+		<Unit filename="lcp.h" />
+		<Unit filename="mass.cpp" />
+		<Unit filename="mat.cpp" />
+		<Unit filename="mat.h" />
+		<Unit filename="matrix.cpp" />
+		<Unit filename="matrix.h" />
+		<Unit filename="memory.cpp" />
+		<Unit filename="misc.cpp" />
+		<Unit filename="nextafterf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="objects.cpp" />
+		<Unit filename="objects.h" />
+		<Unit filename="obstack.cpp" />
+		<Unit filename="obstack.h" />
+		<Unit filename="ode.cpp" />
+		<Unit filename="odeinit.cpp" />
+		<Unit filename="odemath.cpp" />
+		<Unit filename="odemath.h" />
+		<Unit filename="odeou.cpp" />
+		<Unit filename="odeou.h" />
+		<Unit filename="odetls.cpp" />
+		<Unit filename="odetls.h" />
+		<Unit filename="plane.cpp" />
+		<Unit filename="quickstep.cpp" />
+		<Unit filename="quickstep.h" />
+		<Unit filename="ray.cpp" />
+		<Unit filename="rotation.cpp" />
+		<Unit filename="sphere.cpp" />
+		<Unit filename="step.cpp" />
+		<Unit filename="step.h" />
+		<Unit filename="threading_atomics_provs.h" />
+		<Unit filename="threading_base.cpp" />
+		<Unit filename="threading_base.h" />
+		<Unit filename="threading_fake_sync.h" />
+		<Unit filename="threading_impl.cpp" />
+		<Unit filename="threading_impl.h" />
+		<Unit filename="threading_impl_posix.h" />
+		<Unit filename="threading_impl_templates.h" />
+		<Unit filename="threading_impl_win.h" />
+		<Unit filename="threading_pool_posix.cpp" />
+		<Unit filename="threading_pool_win.cpp" />
+		<Unit filename="threadingutils.h" />
+		<Unit filename="timer.cpp" />
+		<Unit filename="typedefs.h" />
+		<Unit filename="util.cpp" />
+		<Unit filename="util.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

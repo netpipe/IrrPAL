@@ -1,0 +1,5 @@
+for building ode shared fPIC so it can be compiled into the libpal.so
+make CXXFLAGS+=-fPIC
+
+
+

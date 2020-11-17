@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libpal" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="./pal" prefix_auto="1" extension_auto="1" />
+				<Option object_output="./objs" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option host_application="marbles2.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="ode" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="./pal" prefix_auto="1" extension_auto="1" />
+				<Option object_output="./objs" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="ode" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fPIC" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/physics/ode-0.13/include" />
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/irrlicht-1.8.4/include" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal" />
+			<Add directory="/home/netpipe/Desktop/IrrNew/pal-code/pal/pal" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add option="-fPIC" />
+		</ResourceCompiler>
+		<Linker>
+			<Add directory="/run/media/netpipe/DEV/Dev/Luna/LunaLibs/physics/ode-0.13/ode/src/.libs" />
+		</Linker>
+		<Unit filename="./src/Config.h" />
+		<Unit filename="./src/ConfigStatic.h" />
+		<Unit filename="./src/ConfigVersion.h" />
+		<Unit filename="./src/pal.cpp" />
+		<Unit filename="./src/pal.h" />
+		<Unit filename="./src/pal.inl" />
+		<Unit filename="./src/palActivation.h" />
+		<Unit filename="./src/palActuators.cpp" />
+		<Unit filename="./src/palActuators.h" />
+		<Unit filename="./src/palBase.h" />
+		<Unit filename="./src/palBodies.cpp" />
+		<Unit filename="./src/palBodies.h" />
+		<Unit filename="./src/palBodyBase.cpp" />
+		<Unit filename="./src/palBodyBase.h" />
+		<Unit filename="./src/palCharacter.cpp" />
+		<Unit filename="./src/palCharacter.h" />
+		<Unit filename="./src/palCollision.cpp" />
+		<Unit filename="./src/palCollision.h" />
+		<Unit filename="./src/palDebugDraw.h" />
+		<Unit filename="./src/palException.cpp" />
+		<Unit filename="./src/palException.h" />
+		<Unit filename="./src/palExtraActuators.h" />
+		<Unit filename="./src/palFactory.cpp" />
+		<Unit filename="./src/palFactory.h" />
+		<Unit filename="./src/palFluid.cpp" />
+		<Unit filename="./src/palFluid.h" />
+		<Unit filename="./src/palGeometry.cpp" />
+		<Unit filename="./src/palGeometry.h" />
+		<Unit filename="./src/palLinks.cpp" />
+		<Unit filename="./src/palLinks.h" />
+		<Unit filename="./src/palMaterials.cpp" />
+		<Unit filename="./src/palMaterials.h" />
+		<Unit filename="./src/palMath.cpp" />
+		<Unit filename="./src/palMath.h" />
+		<Unit filename="./src/palSensors.cpp" />
+		<Unit filename="./src/palSensors.h" />
+		<Unit filename="./src/palSettings.h" />
+		<Unit filename="./src/palSoftBody.cpp" />
+		<Unit filename="./src/palSoftBody.h" />
+		<Unit filename="./src/palSolver.cpp" />
+		<Unit filename="./src/palSolver.h" />
+		<Unit filename="./src/palStatic.cpp" />
+		<Unit filename="./src/palStatic.h" />
+		<Unit filename="./src/palStringable.cpp" />
+		<Unit filename="./src/palStringable.h" />
+		<Unit filename="./src/palTerrain.cpp" />
+		<Unit filename="./src/palTerrain.h" />
+		<Unit filename="./src/palVehicle.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
