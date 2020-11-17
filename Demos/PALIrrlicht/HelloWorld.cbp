@@ -46,7 +46,11 @@
 		<Linker>
 			<Add library="Irrlicht" />
 			<Add library="pal" />
+			<Add library="pal_ode" />
 			<Add directory="./" />
+			<Add directory="../../../IrrPAL" />
+			<Add directory="../../PhysEngines" />
+			<Add directory="../../PhysEngines/ode/ode-0.13" />
 		</Linker>
 		<Unit filename="main_pal_2.cpp" />
 		<Extensions />
