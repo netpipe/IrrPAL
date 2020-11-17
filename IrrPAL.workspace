@@ -2,8 +2,8 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
 		<Project filename="libpal.cbp" />
-		<Project filename="newtonDemos/PALIrrlicht/HelloWorld.cbp" />
 		<Project filename="PhysEngines/pal_ode.cbp" />
 		<Project filename="PhysEngines/ode/ode-0.13/ODE.cbp" />
+		<Project filename="Demos/PALIrrlicht/HelloWorld.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
