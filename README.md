@@ -8,3 +8,6 @@ ode need to be built using the makefiles - todo make CB project for it
 
 
 the rest built using Codeblocks
+
+
+shows tokamak as the winner https://www.youtube.com/watch?v=IhOKGBd-7iw
